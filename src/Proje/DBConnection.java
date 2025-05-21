@@ -31,4 +31,19 @@ public class DBConnection {
         }
         return instance;
     }
+    public class TestConnection {
+        public void main(String[] args) {
+            String url = "jdbc:mysql://localhost:3306/hastane?useSSL=false&serverTimezone=UTC";
+            String user = "root";
+            String password = ""; // Şifrenizi girin
+
+            try {
+                Connection con = DriverManager.getConnection(url, user, password);
+                System.out.println("Bağlantı başarılı!");
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
